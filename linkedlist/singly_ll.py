@@ -20,7 +20,13 @@ class LinkedList:
       current.next = newNode
     else:
       self.head = newNode
-  
+
+  def add_after(self, to_add, after_this):
+    current = self.head
+    while(current.data != after_this):
+      current = current.next
+    current.next = Node(data=to_add, next=current.next)
+
 class LLoutput():
   
   def __init__(self, linkedlist):
@@ -38,6 +44,8 @@ LL = LinkedList()
 LL.insert(3)
 LL.insert(4)
 LL.insert(5)
+LL.add_after(10, 4)
 LL_output = LLoutput(LL)
 
 LL_output.print_ll()
+
