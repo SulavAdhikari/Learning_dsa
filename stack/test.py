@@ -1,7 +1,6 @@
-from unittest import TestCase
 import unittest
 from stack import Stack
-class TestStack(TestCase):
+class TestStack(unittest.TestCase):
 
     def test_basic(self):
         s = Stack()
