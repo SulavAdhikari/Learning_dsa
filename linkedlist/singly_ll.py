@@ -26,26 +26,21 @@ class LinkedList:
     while(current.data != after_this):
       current = current.next
     current.next = Node(data=to_add, next=current.next)
-
-class LLoutput():
-  
-  def __init__(self, linkedlist):
-    self.linkedlist = linkedlist
-
-    # print method for the linked list
-  def print_ll(self,):
-    current = self.linkedlist.head
+      
+  def display(self,):
+    current = self.head
     while(current):
       print(current.data)
       current = current.next
 
-# Singly Linked List with insertion and print methods
-LL = LinkedList()
-LL.insert(3)
-LL.insert(4)
-LL.insert(5)
-LL.add_after(10, 4)
-LL_output = LLoutput(LL)
+  def return_str(self,):
+    return_str = ""
+    current = self.head
+    while(current):
+      return_str += str(current.data)
+      current = current.next
+    return return_str
 
-LL_output.print_ll()
+
+
 

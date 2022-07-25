@@ -1,4 +1,8 @@
 # A single node og a double linked list
+from calendar import c
+import random
+
+
 class Node:
     def __init__(self, data=None, prev=None, next=None):
         self.data = data
@@ -31,17 +35,19 @@ class LinkedList:
             self.head = Node(data)
             self.tail = self.head
 
-    def print_forward(self,):
+    def return_forward(self,):
         current = self.head
+        return_data = ""
         while(current):
-            print(current.data)
+            return_data += str(current.data)
             current = current.next
+        return return_data
 
+        
 class SortedLinkedList:
     def __init__(self):
         self.head = None
-        self.tail = None
-
+    
     def insert(self, data):
          
         new_node = Node(data)
@@ -72,29 +78,16 @@ class SortedLinkedList:
  
             current.next = new_node
             new_node.prev = current
-    
-    def printList(self):
- 
-        node = self.head
-        while node:
-            print(node.data)
-            node = node.next
+
+    def return_forward(self,):
+        current = self.head
+        return_data = ""
+        while(current):
+            return_data += str(current.data)
+            current = current.next
+        return return_data
 
 
-LL1 = LinkedList()
 
-LL1.insert(1)
-LL1.insert(3)
-LL1.insert(2)
-LL1.add_after(3, 10)
-
-LL2 = SortedLinkedList()
-LL2.insert(4)
-LL2.insert(1)
-LL2.insert(0)
-LL2.insert(9)
-
-LL2.printList()
-# LL1.print_forward()
 
 
